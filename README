@@ -1,0 +1,30 @@
+This app is developed on Java 17 with Gradle 7.5.1.
+
+To run the application via command line
+=======================================
+- clone the repo
+- run the following command inside the folder
+  > ./gradlew run
+
+Expected inputs:
+- Line 1: arena limit (eg: 5 5)
+- Line 2: position of first robot with direction (eg: 1 2 N)
+- Line 3: sequence of moves for first robot (eg: LMLMLMLMM)
+- Line 4: position of first robot with direction (eg: 3 3 E)
+- Line 5: sequence of moves for second robot (eg: MMRMMRMRRM)
+
+Outputs:
+- For valid inputs, 2 lines with the robots new position will be printed to the console
+- For invalid inputs, exceptions will be thrown
+
+Assumptions:
+- Arena cannot be smaller than 1, 1 (4 grids)
+- Two robots cannot occupy the same grid
+    - the second robot's initial position cannot be the same as the first robot's final position
+    - if the second robot's next move takes it to the first robot's grid, the second robot stops in the grid before
+      eg: if first robot is in 2,2 and second robot is in 2, 1 N with the next move M, it remains in 2, 1 N until it turns
+- Robots cannot be placed outside the arena limit
+- Robots cannot move outside the arena limit
+  eg: if a robot is at 0, 0 S and the next move is M, it remains in 0, 0 S
+- There will always be exactly 2 robots
+- The second robot is placed on the arena after the first robot has completed its movements
